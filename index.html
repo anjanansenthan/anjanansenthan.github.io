@@ -1,608 +1,359 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Anjanan Senthan | Math & Statistics</title>
-
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-                   Helvetica, Arial, sans-serif;
-      background: #0a0e13;
-      color: #c9d1d9;
-      line-height: 1.7;
-    }
-
-    /* PAGE */
-
-    .container {
-      max-width: 850px;
-      margin: 0 auto;
-      padding: 70px 28px 40px;
-    }
-
-    /* HERO */
-
-    header {
-      padding: 25px 0 15px;
-    }
-
-    .eyebrow {
-      color: #58a6ff;
-      font-size: 0.82rem;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      margin-bottom: 16px;
-    }
-
-    header h1 {
-      color: #f0f6fc;
-      font-size: clamp(3rem, 8vw, 4.5rem);
-      line-height: 1.05;
-      letter-spacing: -2.5px;
-      font-weight: 750;
-      margin-bottom: 20px;
-    }
-
-    header p {
-      max-width: 650px;
-      color: #8b949e;
-      font-size: 1.08rem;
-      line-height: 1.8;
-    }
-
-    /* BUTTONS */
-
-    .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 11px;
-      margin-top: 30px;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      padding: 10px 17px;
-      border-radius: 7px;
-      text-decoration: none;
-      font-size: 0.88rem;
-      font-weight: 650;
-      transition: 0.2s ease;
-    }
-
-    .primary {
-      background: #238636;
-      color: white;
-    }
-
-    .primary:hover {
-      background: #2ea043;
-      transform: translateY(-2px);
-    }
-
-    .secondary {
-      background: #11161d;
-      border: 1px solid #30363d;
-      color: #c9d1d9;
-    }
-
-    .secondary:hover {
-      border-color: #58a6ff;
-      color: #58a6ff;
-      transform: translateY(-2px);
-    }
-
-    /* SKILLS */
-
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 28px;
-    }
-
-    .skills span {
-      padding: 5px 12px;
-      background: #0f141a;
-      border: 1px solid #252b33;
-      border-radius: 999px;
-      color: #aab4c0;
-      font-size: 0.78rem;
-      transition: 0.2s ease;
-    }
-
-    .skills span:hover {
-      border-color: #58a6ff;
-      color: #58a6ff;
-    }
-
-    /* SECTIONS */
-
-    section {
-      margin-top: 75px;
-    }
-
-    .section-title {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 22px;
-    }
-
-    .section-title h2 {
-      color: #f0f6fc;
-      font-size: 1.25rem;
-      font-weight: 650;
-      white-space: nowrap;
-    }
-
-    .section-line {
-      height: 1px;
-      width: 100%;
-      background: #21262d;
-    }
-
-    /* CARDS */
-
-    .card {
-      background: #0f141a;
-      border: 1px solid #20262e;
-      border-radius: 12px;
-      padding: 25px;
-      transition: 0.25s ease;
-    }
-
-    .card:hover {
-      border-color: #303943;
-      transform: translateY(-2px);
-    }
-
-    .card + .card {
-      margin-top: 14px;
-    }
-
-    .card h3 {
-      color: #f0f6fc;
-      font-size: 1.08rem;
-      margin-bottom: 7px;
-    }
-
-    .card p {
-      color: #8b949e;
-      font-size: 0.93rem;
-    }
-
-    /* ABOUT */
-
-    .about-text p + p {
-      margin-top: 14px;
-    }
-
-    /* EDUCATION */
-
-    .education {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 20px;
-    }
-
-    .university {
-      color: #f0f6fc !important;
-      font-size: 1.1rem !important;
-      font-weight: 650;
-      margin-bottom: 4px;
-    }
-
-    .degree {
-      color: #58a6ff !important;
-      margin-bottom: 3px;
-    }
-
-    .location {
-      color: #6e7681 !important;
-      font-size: 0.85rem !important;
-    }
-
-    .status {
-      color: #6e7681;
-      font-size: 0.8rem;
-      white-space: nowrap;
-    }
-
-    /* PROJECT */
-
-    .project-label {
-      color: #58a6ff;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      margin-bottom: 7px;
-    }
-
-    .project p {
-      margin-bottom: 17px;
-    }
-
-    .tech {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 7px;
-      margin-bottom: 18px;
-    }
-
-    .tech span {
-      padding: 4px 9px;
-      background: #0a0e13;
-      border: 1px solid #292f37;
-      border-radius: 5px;
-      color: #8b949e;
-      font-size: 0.73rem;
-    }
-
-    .project-link {
-      color: #58a6ff;
-      text-decoration: none;
-      font-size: 0.86rem;
-      font-weight: 650;
-    }
-
-    .project-link:hover {
-      text-decoration: underline;
-    }
-
-    /* LEARNING */
-
-    .learning-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-
-    .learning-item {
-      padding: 17px;
-      background: #0f141a;
-      border: 1px solid #20262e;
-      border-radius: 10px;
-      color: #c9d1d9;
-      font-size: 0.88rem;
-    }
-
-    .learning-item small {
-      display: block;
-      color: #58a6ff;
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.8px;
-      margin-bottom: 3px;
-    }
-
-    /* FOOTER */
-
-    footer {
-      margin-top: 80px;
-      padding-top: 24px;
-      border-top: 1px solid #21262d;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-    }
-
-    footer p {
-      color: #6e7681;
-      font-size: 0.8rem;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 20px;
-    }
-
-    footer a {
-      color: #8b949e;
-      text-decoration: none;
-      font-size: 0.82rem;
-      transition: 0.2s ease;
-    }
-
-    footer a:hover {
-      color: #58a6ff;
-    }
-
-    /* MOBILE */
-
-    @media (max-width: 600px) {
-
-      .container {
-        padding: 45px 20px 30px;
-      }
-
-      header h1 {
-        font-size: 3rem;
-      }
-
-      header p {
-        font-size: 0.98rem;
-      }
-
-      section {
-        margin-top: 58px;
-      }
-
-      .education {
-        flex-direction: column;
-        gap: 5px;
-      }
-
-      .learning-grid {
-        grid-template-columns: 1fr;
-      }
-
-      footer {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-  </style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anjanan Senthan | Mathematics &amp; Statistics</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper: #ECE6D8;
+    --panel: #F4EFE3;
+    --ink: #1F2A24;
+    --muted: #6B6353;
+    --rule: #C7BEA6;
+    --accent: #2E5E45;
+    --accent-soft: #3E7357;
+    --data: #9C4A38;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    background-image:
+      linear-gradient(var(--rule) 1px, transparent 1px);
+    background-size: 100% 34px;
+    background-position: 0 210px;
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.65;
+  }
+
+  ::selection { background: var(--accent); color: var(--panel); }
+
+  a { color: inherit; }
+
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 72px 28px 60px;
+  }
+
+  header { padding-bottom: 40px; }
+
+  .name {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: clamp(2.6rem, 7vw, 3.6rem);
+    letter-spacing: -0.5px;
+    line-height: 1.05;
+  }
+
+  .role {
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 1.02rem;
+    max-width: 480px;
+  }
+
+  nav.links {
+    margin-top: 26px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    font-size: 0.9rem;
+  }
+
+  nav.links a {
+    text-decoration: none;
+    color: var(--ink);
+    padding: 3px 16px 3px 0;
+    border-right: 1px solid var(--rule);
+    margin-right: 16px;
+  }
+
+  nav.links a:last-child { border-right: none; margin-right: 0; }
+  nav.links a:hover { color: var(--accent); }
+  nav.links a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+  .ticker {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.74rem;
+    color: var(--muted);
+  }
+
+  .ticker span::before {
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    background: var(--accent-soft);
+    border-radius: 50%;
+    margin-right: 7px;
+    vertical-align: middle;
+  }
+
+  section { margin-top: 58px; }
+
+  h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+
+  .about {
+    border-left: 2px solid var(--rule);
+    padding-left: 22px;
+    max-width: 560px;
+    color: #333c34;
+  }
+
+  .about p + p { margin-top: 14px; }
+
+  .ledger-row { display: flex; align-items: baseline; gap: 10px; }
+  .ledger-row .label { white-space: nowrap; }
+  .ledger-row .label .inst { font-weight: 600; }
+  .ledger-row .label .degree { color: var(--accent); font-size: 0.92rem; }
+  .ledger-row .leader { flex: 1; border-bottom: 1px dotted var(--rule); margin-bottom: 6px; }
+  .ledger-row .value {
+    white-space: nowrap;
+    color: var(--muted);
+    font-size: 0.85rem;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  .project {
+    display: grid;
+    grid-template-columns: 1fr 150px;
+    gap: 24px;
+    align-items: start;
+  }
+
+  .project h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+  }
+
+  .project p { color: #333c34; max-width: 480px; margin-bottom: 16px; }
+
+  .stack { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+  .stack span {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--muted);
+    border: 1px solid var(--rule);
+    padding: 3px 8px;
+    border-radius: 3px;
+  }
+
+  .project-link {
+    display: inline-block;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent-soft);
+  }
+
+  .project-link:hover { color: var(--accent-soft); }
+
+  .spark { align-self: center; }
+
+  .spark path.line {
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 240;
+    stroke-dashoffset: 240;
+    animation: draw 1.6s ease-out 0.2s forwards;
+  }
+
+  .spark circle {
+    fill: var(--data);
+    opacity: 0;
+    animation: appear 0.4s ease-out 1.7s forwards;
+  }
+
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  @keyframes appear { to { opacity: 1; } }
+
+  @media (prefers-reduced-motion: reduce) {
+    .spark path.line { animation: none; stroke-dashoffset: 0; }
+    .spark circle { animation: none; opacity: 1; }
+  }
+
+  .learning-list { display: flex; flex-direction: column; }
+  .learning-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--rule);
+    gap: 20px;
+  }
+  .learning-row:first-child { border-top: 1px solid var(--rule); }
+  .learning-row .skill { font-weight: 600; white-space: nowrap; }
+  .learning-row .note { color: var(--muted); font-size: 0.88rem; text-align: right; }
+
+  footer {
+    margin-top: 70px;
+    padding-top: 22px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  footer p { color: var(--muted); font-size: 0.8rem; }
+  .footer-links { display: flex; gap: 18px; font-size: 0.82rem; }
+  footer a { text-decoration: none; color: var(--muted); }
+  footer a:hover { color: var(--accent); }
+
+  @media (max-width: 600px) {
+    .container { padding: 50px 20px 40px; }
+    .project { grid-template-columns: 1fr; }
+    .spark { display: none; }
+    .ledger-row { flex-wrap: wrap; }
+    .ledger-row .leader { display: none; }
+    footer { flex-direction: column; align-items: flex-start; }
+  }
+</style>
 </head>
-
 <body>
 
-  <div class="container">
+<div class="container">
 
-```
-<!-- HERO -->
-
-<header>
-
-  <div class="eyebrow">
-    Mathematics & Statistics
-  </div>
-
-  <h1>
-    Hi, I'm Anjanan.
-  </h1>
-
-  <p>
-    I'm a Mathematics & Statistics student at McMaster University
-    interested in data analytics, financial services, and using
-    data to solve real-world problems.
-  </p>
-
-  <div class="buttons">
-
-    <a
-      class="button primary"
-      href="resume.pdf"
-      target="_blank">
-      View Resume
-    </a>
-
-    <a
-      class="button secondary"
-      href="https://github.com/anjanansenthan"
-      target="_blank">
-      GitHub
-    </a>
-
-    <a
-      class="button secondary"
-      href="https://www.linkedin.com/in/anjanan-senthan/"
-      target="_blank">
-      LinkedIn
-    </a>
-
-  </div>
-
-  <div class="skills">
-    <span>R</span>
-    <span>Python</span>
-    <span>SQL</span>
-    <span>Power BI</span>
-    <span>Statistics</span>
-    <span>Data Visualization</span>
-  </div>
-
-</header>
-
-
-<!-- ABOUT -->
-
-<section>
-
-  <div class="section-title">
-    <h2>About</h2>
-    <div class="section-line"></div>
-  </div>
-
-  <div class="card about-text">
-
-    <p>
-      I am a Mathematics & Statistics student at McMaster University
-      developing my skills in statistical analysis, programming,
-      and data visualization.
+  <header>
+    <div class="name">Anjanan Senthan</div>
+    <p class="role">
+      Mathematics &amp; Statistics student at McMaster University,
+      building toward a career in data analytics and financial services.
     </p>
 
-    <p>
-      I enjoy working with data to identify patterns, answer
-      questions, and communicate insights clearly. I am particularly
-      interested in data analytics and financial services, and I
-      build personal projects to develop practical experience with
-      real-world datasets.
-    </p>
+    <nav class="links">
+      <a href="resume.pdf" target="_blank">Resume</a>
+      <a href="https://github.com/anjanansenthan" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/anjanan-senthan/" target="_blank">LinkedIn</a>
+      <a href="mailto:anjanan.senthan@gmail.com">Email</a>
+    </nav>
 
-  </div>
-
-</section>
-
-
-<!-- EDUCATION -->
-
-<section>
-
-  <div class="section-title">
-    <h2>Education</h2>
-    <div class="section-line"></div>
-  </div>
-
-  <div class="card education">
-
-    <div>
-
-      <p class="university">
-        McMaster University
-      </p>
-
-      <p class="degree">
-        Mathematics & Statistics
-      </p>
-
-      <p class="location">
-        Hamilton, Ontario
-      </p>
-
-    </div>
-
-    <div class="status">
-      Undergraduate
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- PROJECTS -->
-
-<section>
-
-  <div class="section-title">
-    <h2>Projects</h2>
-    <div class="section-line"></div>
-  </div>
-
-  <div class="card project">
-
-    <div class="project-label">
-      PROJECT 01
-    </div>
-
-    <h3>
-      Stock Market Performance Analysis
-    </h3>
-
-    <p>
-      An R-based analysis of major companies including AAPL, MSFT,
-      NVDA, AMZN, TSLA, and JPM. The project explores stock returns,
-      moving averages, volatility, and correlations to better
-      understand historical market performance.
-    </p>
-
-    <div class="tech">
+    <div class="ticker">
       <span>R</span>
-      <span>tidyquant</span>
-      <span>ggplot2</span>
-      <span>Financial Data</span>
+      <span>Python</span>
+      <span>SQL</span>
+      <span>Power BI</span>
+      <span>Statistics</span>
+      <span>Data Visualization</span>
     </div>
+  </header>
 
-    <a
-      class="project-link"
-      href="https://github.com/anjanansenthan/financial-stock-analysis"
-      target="_blank">
-      View Project on GitHub →
-    </a>
-
-  </div>
-
-</section>
-
-
-<!-- CURRENTLY LEARNING -->
-
-<section>
-
-  <div class="section-title">
-    <h2>Currently Learning</h2>
-    <div class="section-line"></div>
-  </div>
-
-  <div class="learning-grid">
-
-    <div class="learning-item">
-      <small>01</small>
-      SQL & Database Analysis
+  <section>
+    <h2>About</h2>
+    <div class="about">
+      <p>
+        I'm developing my skills in statistical analysis, programming,
+        and data visualization through coursework and independent
+        projects.
+      </p>
+      <p>
+        I like working with data to find patterns, answer questions,
+        and communicate what I find clearly. My focus right now is
+        data analytics and financial services, and I build projects
+        with real datasets to get practical experience.
+      </p>
     </div>
+  </section>
 
-    <div class="learning-item">
-      <small>02</small>
-      Power BI & Data Visualization
+  <section>
+    <h2>Education</h2>
+    <div class="ledger-row">
+      <div class="label">
+        <div class="inst">McMaster University</div>
+        <div class="degree">Mathematics &amp; Statistics, Hamilton, Ontario</div>
+      </div>
+      <div class="leader"></div>
+      <div class="value">Undergraduate</div>
     </div>
+  </section>
 
-    <div class="learning-item">
-      <small>03</small>
-      Python for Data Analysis
+  <section>
+    <h2>Projects</h2>
+    <div class="project">
+      <div>
+        <h3>Stock Market Performance Analysis</h3>
+        <p>
+          An R-based analysis of major companies including AAPL, MSFT,
+          NVDA, AMZN, TSLA, and JPM — exploring returns, moving
+          averages, volatility, and correlations to understand
+          historical market performance.
+        </p>
+        <div class="stack">
+          <span>R</span>
+          <span>tidyquant</span>
+          <span>ggplot2</span>
+          <span>financial data</span>
+        </div>
+        <a class="project-link" href="https://github.com/anjanansenthan/financial-stock-analysis" target="_blank">
+          View project on GitHub
+        </a>
+      </div>
+
+      <svg class="spark" viewBox="0 0 150 70" width="150" height="70" aria-hidden="true">
+        <path class="line" d="M4,52 L24,44 L44,50 L64,28 L84,34 L104,14 L124,20 L146,6" />
+        <circle cx="146" cy="6" r="3.5" />
+      </svg>
     </div>
+  </section>
 
-    <div class="learning-item">
-      <small>04</small>
-      Statistical Modeling
+  <section>
+    <h2>Currently learning</h2>
+    <div class="learning-list">
+      <div class="learning-row">
+        <div class="skill">SQL</div>
+        <div class="note">Database and query analysis</div>
+      </div>
+      <div class="learning-row">
+        <div class="skill">Power BI</div>
+        <div class="note">Dashboards and data visualization</div>
+      </div>
+      <div class="learning-row">
+        <div class="skill">Python</div>
+        <div class="note">Data analysis workflows</div>
+      </div>
+      <div class="learning-row">
+        <div class="skill">Statistical modeling</div>
+        <div class="note">Applied methods beyond coursework</div>
+      </div>
     </div>
+  </section>
 
-  </div>
+  <footer>
+    <p>© 2026 Anjanan Senthan</p>
+    <div class="footer-links">
+      <a href="https://github.com/anjanansenthan" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/anjanan-senthan/" target="_blank">LinkedIn</a>
+      <a href="mailto:anjanan.senthan@gmail.com">Email</a>
+    </div>
+  </footer>
 
-</section>
-
-
-<!-- FOOTER -->
-
-<footer>
-
-  <p>
-    © 2026 Anjanan Senthan
-  </p>
-
-  <div class="footer-links">
-
-    <a
-      href="https://github.com/anjanansenthan"
-      target="_blank">
-      GitHub
-    </a>
-
-    <a
-      href="https://www.linkedin.com/in/anjanan-senthan/"
-      target="_blank">
-      LinkedIn
-    </a>
-
-    <a
-      href="mailto:anjanan.senthan@gmail.com">
-      Email
-    </a>
-
-  </div>
-
-</footer>
-```
-
-  </div>
+</div>
 
 </body>
 </html>
