@@ -26,67 +26,66 @@
 
   body {
     background: var(--paper);
-    background-image:
-      linear-gradient(var(--rule) 1px, transparent 1px);
-    background-size: 100% 34px;
-    background-position: 0 210px;
     color: var(--ink);
     font-family: 'Inter', sans-serif;
     line-height: 1.65;
   }
 
   ::selection { background: var(--accent); color: var(--panel); }
-
   a { color: inherit; }
 
-  .container {
-    max-width: 720px;
+  .page {
+    max-width: 1080px;
     margin: 0 auto;
     padding: 72px 28px 60px;
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 70px;
+    align-items: start;
   }
 
-  header { padding-bottom: 40px; }
+  aside {
+    position: sticky;
+    top: 60px;
+  }
 
   .name {
     font-family: 'Fraunces', serif;
     font-weight: 500;
-    font-size: clamp(2.6rem, 7vw, 3.6rem);
+    font-size: 2.3rem;
     letter-spacing: -0.5px;
-    line-height: 1.05;
+    line-height: 1.08;
   }
 
   .role {
-    margin-top: 10px;
+    margin-top: 14px;
     color: var(--muted);
-    font-size: 1.02rem;
-    max-width: 480px;
+    font-size: 0.94rem;
   }
 
   nav.links {
-    margin-top: 26px;
+    margin-top: 30px;
     display: flex;
-    flex-wrap: wrap;
-    gap: 0;
+    flex-direction: column;
     font-size: 0.9rem;
   }
 
   nav.links a {
     text-decoration: none;
     color: var(--ink);
-    padding: 3px 16px 3px 0;
-    border-right: 1px solid var(--rule);
-    margin-right: 16px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--rule);
   }
 
-  nav.links a:last-child { border-right: none; margin-right: 0; }
+  nav.links a:first-child { border-top: 1px solid var(--rule); }
   nav.links a:hover { color: var(--accent); }
   nav.links a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
   .ticker {
     margin-top: 30px;
     display: flex;
-    flex-wrap: wrap;
-    gap: 18px;
+    flex-direction: column;
+    gap: 10px;
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.74rem;
     color: var(--muted);
@@ -99,11 +98,17 @@
     height: 5px;
     background: var(--accent-soft);
     border-radius: 50%;
-    margin-right: 7px;
+    margin-right: 8px;
     vertical-align: middle;
   }
 
-  section { margin-top: 58px; }
+  main {
+    background-image: linear-gradient(var(--rule) 1px, transparent 1px);
+    background-size: 100% 34px;
+  }
+
+  section { margin-bottom: 58px; }
+  section:last-of-type { margin-bottom: 0; }
 
   h2 {
     font-family: 'Fraunces', serif;
@@ -113,8 +118,6 @@
   }
 
   .about {
-    border-left: 2px solid var(--rule);
-    padding-left: 22px;
     max-width: 560px;
     color: #333c34;
   }
@@ -170,7 +173,7 @@
 
   .project-link:hover { color: var(--accent-soft); }
 
-  .spark { align-self: center; }
+  .spark { align-self: center; justify-self: end; }
 
   .spark path.line {
     fill: none;
@@ -226,8 +229,24 @@
   footer a { text-decoration: none; color: var(--muted); }
   footer a:hover { color: var(--accent); }
 
-  @media (max-width: 600px) {
-    .container { padding: 50px 20px 40px; }
+  @media (max-width: 780px) {
+    .page {
+      grid-template-columns: 1fr;
+      padding: 50px 20px 40px;
+      gap: 40px;
+    }
+    aside { position: static; }
+    nav.links { flex-direction: row; flex-wrap: wrap; }
+    nav.links a {
+      border-bottom: none;
+      border-right: 1px solid var(--rule);
+      padding: 3px 14px 3px 0;
+      margin-right: 14px;
+    }
+    nav.links a:first-child { border-top: none; }
+    nav.links a:last-child { border-right: none; margin-right: 0; }
+    .ticker { flex-direction: row; flex-wrap: wrap; gap: 16px; }
+    main { background-image: none; }
     .project { grid-template-columns: 1fr; }
     .spark { display: none; }
     .ledger-row { flex-wrap: wrap; }
@@ -238,9 +257,9 @@
 </head>
 <body>
 
-<div class="container">
+<div class="page">
 
-  <header>
+  <aside>
     <div class="name">Anjanan Senthan</div>
     <p class="role">
       Mathematics &amp; Statistics student at McMaster University,
@@ -262,96 +281,100 @@
       <span>Statistics</span>
       <span>Data Visualization</span>
     </div>
-  </header>
+  </aside>
 
-  <section>
-    <h2>About</h2>
-    <div class="about">
-      <p>
-        I'm developing my skills in statistical analysis, programming,
-        and data visualization through coursework and independent
-        projects.
-      </p>
-      <p>
-        I like working with data to find patterns, answer questions,
-        and communicate what I find clearly. My focus right now is
-        data analytics and financial services, and I build projects
-        with real datasets to get practical experience.
-      </p>
-    </div>
-  </section>
+  <main>
 
-  <section>
-    <h2>Education</h2>
-    <div class="ledger-row">
-      <div class="label">
-        <div class="inst">McMaster University</div>
-        <div class="degree">Mathematics &amp; Statistics, Hamilton, Ontario</div>
-      </div>
-      <div class="leader"></div>
-      <div class="value">Undergraduate</div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Projects</h2>
-    <div class="project">
-      <div>
-        <h3>Stock Market Performance Analysis</h3>
+    <section>
+      <h2>About</h2>
+      <div class="about">
         <p>
-          An R-based analysis of major companies including AAPL, MSFT,
-          NVDA, AMZN, TSLA, and JPM — exploring returns, moving
-          averages, volatility, and correlations to understand
-          historical market performance.
+          I'm developing my skills in statistical analysis, programming,
+          and data visualization through coursework and independent
+          projects.
         </p>
-        <div class="stack">
-          <span>R</span>
-          <span>tidyquant</span>
-          <span>ggplot2</span>
-          <span>financial data</span>
+        <p>
+          I like working with data to find patterns, answer questions,
+          and communicate what I find clearly. My focus right now is
+          data analytics and financial services, and I build projects
+          with real datasets to get practical experience.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <div class="ledger-row">
+        <div class="label">
+          <div class="inst">McMaster University</div>
+          <div class="degree">Mathematics &amp; Statistics, Hamilton, Ontario</div>
         </div>
-        <a class="project-link" href="https://github.com/anjanansenthan/financial-stock-analysis" target="_blank">
-          View project on GitHub
-        </a>
+        <div class="leader"></div>
+        <div class="value">Undergraduate</div>
       </div>
+    </section>
 
-      <svg class="spark" viewBox="0 0 150 70" width="150" height="70" aria-hidden="true">
-        <path class="line" d="M4,52 L24,44 L44,50 L64,28 L84,34 L104,14 L124,20 L146,6" />
-        <circle cx="146" cy="6" r="3.5" />
-      </svg>
-    </div>
-  </section>
+    <section>
+      <h2>Projects</h2>
+      <div class="project">
+        <div>
+          <h3>Stock Market Performance Analysis</h3>
+          <p>
+            An R-based analysis of major companies including AAPL, MSFT,
+            NVDA, AMZN, TSLA, and JPM — exploring returns, moving
+            averages, volatility, and correlations to understand
+            historical market performance.
+          </p>
+          <div class="stack">
+            <span>R</span>
+            <span>tidyquant</span>
+            <span>ggplot2</span>
+            <span>financial data</span>
+          </div>
+          <a class="project-link" href="https://github.com/anjanansenthan/financial-stock-analysis" target="_blank">
+            View project on GitHub
+          </a>
+        </div>
 
-  <section>
-    <h2>Currently learning</h2>
-    <div class="learning-list">
-      <div class="learning-row">
-        <div class="skill">SQL</div>
-        <div class="note">Database and query analysis</div>
+        <svg class="spark" viewBox="0 0 150 70" width="150" height="70" aria-hidden="true">
+          <path class="line" d="M4,52 L24,44 L44,50 L64,28 L84,34 L104,14 L124,20 L146,6" />
+          <circle cx="146" cy="6" r="3.5" />
+        </svg>
       </div>
-      <div class="learning-row">
-        <div class="skill">Power BI</div>
-        <div class="note">Dashboards and data visualization</div>
-      </div>
-      <div class="learning-row">
-        <div class="skill">Python</div>
-        <div class="note">Data analysis workflows</div>
-      </div>
-      <div class="learning-row">
-        <div class="skill">Statistical modeling</div>
-        <div class="note">Applied methods beyond coursework</div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <footer>
-    <p>© 2026 Anjanan Senthan</p>
-    <div class="footer-links">
-      <a href="https://github.com/anjanansenthan" target="_blank">GitHub</a>
-      <a href="https://www.linkedin.com/in/anjanan-senthan/" target="_blank">LinkedIn</a>
-      <a href="mailto:anjanan.senthan@gmail.com">Email</a>
-    </div>
-  </footer>
+    <section>
+      <h2>Currently learning</h2>
+      <div class="learning-list">
+        <div class="learning-row">
+          <div class="skill">SQL</div>
+          <div class="note">Database and query analysis</div>
+        </div>
+        <div class="learning-row">
+          <div class="skill">Power BI</div>
+          <div class="note">Dashboards and data visualization</div>
+        </div>
+        <div class="learning-row">
+          <div class="skill">Python</div>
+          <div class="note">Data analysis workflows</div>
+        </div>
+        <div class="learning-row">
+          <div class="skill">Statistical modeling</div>
+          <div class="note">Applied methods beyond coursework</div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2026 Anjanan Senthan</p>
+      <div class="footer-links">
+        <a href="https://github.com/anjanansenthan" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/anjanan-senthan/" target="_blank">LinkedIn</a>
+        <a href="mailto:anjanan.senthan@gmail.com">Email</a>
+      </div>
+    </footer>
+
+  </main>
 
 </div>
 
