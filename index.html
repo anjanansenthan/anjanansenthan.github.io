@@ -1,47 +1,412 @@
 <!DOCTYPE html>
 
-<html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Anjanan Senthan | Math & Statistics</title>
+  <title>Anjanan Senthan | Math & Statistics</title>
 
-<style> * { box-sizing: border-box; margin: 0; padding: 0; } html { scroll-behavior: smooth; } body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; background: #0b0f14; color: #d1d5db; line-height: 1.7; } /* Main container */ .container { max-width: 850px; margin: 0 auto; padding: 70px 25px 40px; } /* Hero */ header { padding: 30px 0 20px; } .intro-label { color: #58a6ff; font-size: 0.9rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; } header h1 { font-size: clamp(2.6rem, 7vw, 4.2rem); line-height: 1.1; font-weight: 750; color: #f0f6fc; margin-bottom: 18px; letter-spacing: -2px; } header p { color: #8b949e; font-size: 1.15rem; max-width: 650px; line-height: 1.7; } /* Buttons */ .hero-buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; } .button { display: inline-block; padding: 10px 18px; border-radius: 7px; text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: all 0.2s ease; } .button-primary { background: #238636; color: white; } .button-primary:hover { background: #2ea043; transform: translateY(-2px); } .button-secondary { background: #161b22; border: 1px solid #30363d; color: #c9d1d9; } .button-secondary:hover { border-color: #58a6ff; color: #58a6ff; transform: translateY(-2px); } /* Skills */ .skills { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 28px; } .skills span { background: #11161d; border: 1px solid #30363d; color: #c9d1d9; padding: 6px 13px; border-radius: 999px; font-size: 0.82rem; transition: all 0.2s ease; } .skills span:hover { border-color: #58a6ff; color: #58a6ff; } /* Sections */ section { margin-top: 75px; } section h2 { font-size: 1.35rem; color: #f0f6fc; margin-bottom: 22px; display: flex; align-items: center; gap: 12px; } section h2::after { content: ""; height: 1px; flex: 1; background: #21262d; } /* Cards */ .card { background: #11161d; border: 1px solid #21262d; border-radius: 12px; padding: 25px; margin-bottom: 16px; transition: all 0.25s ease; } .card:hover { border-color: #30363d; transform: translateY(-3px); } .card h3 { font-size: 1.15rem; color: #f0f6fc; margin-bottom: 7px; } .card p { color: #8b949e; font-size: 0.95rem; margin-bottom: 14px; } /* Education */ .education-header { display: flex; justify-content: space-between; gap: 20px; align-items: flex-start; } .education-date { color: #8b949e; font-size: 0.85rem; white-space: nowrap; } .degree { color: #58a6ff !important; margin-bottom: 2px !important; } /* Projects */ .project-number { color: #58a6ff; font-size: 0.8rem; font-weight: 600; margin-bottom: 5px; } .project-tech { display: flex; flex-wrap: wrap; gap: 7px; margin: 15px 0; } .project-tech span { background: #0b0f14; border: 1px solid #30363d; color: #8b949e; padding: 4px 9px; border-radius: 5px; font-size: 0.75rem; } .project-link { color: #58a6ff; text-decoration: none; font-size: 0.9rem; font-weight: 600; } .project-link:hover { text-decoration: underline; } /* Currently learning */ .learning-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; } .learning-item { background: #11161d; border: 1px solid #21262d; border-radius: 10px; padding: 17px; color: #c9d1d9; font-size: 0.9rem; } .learning-item span { display: block; color: #58a6ff; font-size: 0.78rem; margin-bottom: 3px; font-weight: 600; } /* Footer */ footer { margin-top: 85px; padding: 25px 0 10px; border-top: 1px solid #21262d; display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; } footer p { color: #6e7681; font-size: 0.85rem; } .footer-links { display: flex; gap: 18px; } footer a { color: #8b949e; text-decoration: none; font-size: 0.85rem; transition: color 0.2s ease; } footer a:hover { color: #58a6ff; } /* Mobile */ @media (max-width: 600px) { .container { padding: 45px 20px 30px; } header h1 { font-size: 2.7rem; } header p { font-size: 1rem; } section { margin-top: 55px; } .card { padding: 20px; } .education-header { flex-direction: column; gap: 2px; } .learning-list { grid-template-columns: 1fr; } footer { flex-direction: column; align-items: flex-start; } } </style>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                   Helvetica, Arial, sans-serif;
+      background: #0a0e13;
+      color: #c9d1d9;
+      line-height: 1.7;
+    }
+
+    /* PAGE */
+
+    .container {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 70px 28px 40px;
+    }
+
+    /* HERO */
+
+    header {
+      padding: 25px 0 15px;
+    }
+
+    .eyebrow {
+      color: #58a6ff;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    header h1 {
+      color: #f0f6fc;
+      font-size: clamp(3rem, 8vw, 4.5rem);
+      line-height: 1.05;
+      letter-spacing: -2.5px;
+      font-weight: 750;
+      margin-bottom: 20px;
+    }
+
+    header p {
+      max-width: 650px;
+      color: #8b949e;
+      font-size: 1.08rem;
+      line-height: 1.8;
+    }
+
+    /* BUTTONS */
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 11px;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 17px;
+      border-radius: 7px;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 650;
+      transition: 0.2s ease;
+    }
+
+    .primary {
+      background: #238636;
+      color: white;
+    }
+
+    .primary:hover {
+      background: #2ea043;
+      transform: translateY(-2px);
+    }
+
+    .secondary {
+      background: #11161d;
+      border: 1px solid #30363d;
+      color: #c9d1d9;
+    }
+
+    .secondary:hover {
+      border-color: #58a6ff;
+      color: #58a6ff;
+      transform: translateY(-2px);
+    }
+
+    /* SKILLS */
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 28px;
+    }
+
+    .skills span {
+      padding: 5px 12px;
+      background: #0f141a;
+      border: 1px solid #252b33;
+      border-radius: 999px;
+      color: #aab4c0;
+      font-size: 0.78rem;
+      transition: 0.2s ease;
+    }
+
+    .skills span:hover {
+      border-color: #58a6ff;
+      color: #58a6ff;
+    }
+
+    /* SECTIONS */
+
+    section {
+      margin-top: 75px;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .section-title h2 {
+      color: #f0f6fc;
+      font-size: 1.25rem;
+      font-weight: 650;
+      white-space: nowrap;
+    }
+
+    .section-line {
+      height: 1px;
+      width: 100%;
+      background: #21262d;
+    }
+
+    /* CARDS */
+
+    .card {
+      background: #0f141a;
+      border: 1px solid #20262e;
+      border-radius: 12px;
+      padding: 25px;
+      transition: 0.25s ease;
+    }
+
+    .card:hover {
+      border-color: #303943;
+      transform: translateY(-2px);
+    }
+
+    .card + .card {
+      margin-top: 14px;
+    }
+
+    .card h3 {
+      color: #f0f6fc;
+      font-size: 1.08rem;
+      margin-bottom: 7px;
+    }
+
+    .card p {
+      color: #8b949e;
+      font-size: 0.93rem;
+    }
+
+    /* ABOUT */
+
+    .about-text p + p {
+      margin-top: 14px;
+    }
+
+    /* EDUCATION */
+
+    .education {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .university {
+      color: #f0f6fc !important;
+      font-size: 1.1rem !important;
+      font-weight: 650;
+      margin-bottom: 4px;
+    }
+
+    .degree {
+      color: #58a6ff !important;
+      margin-bottom: 3px;
+    }
+
+    .location {
+      color: #6e7681 !important;
+      font-size: 0.85rem !important;
+    }
+
+    .status {
+      color: #6e7681;
+      font-size: 0.8rem;
+      white-space: nowrap;
+    }
+
+    /* PROJECT */
+
+    .project-label {
+      color: #58a6ff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 7px;
+    }
+
+    .project p {
+      margin-bottom: 17px;
+    }
+
+    .tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-bottom: 18px;
+    }
+
+    .tech span {
+      padding: 4px 9px;
+      background: #0a0e13;
+      border: 1px solid #292f37;
+      border-radius: 5px;
+      color: #8b949e;
+      font-size: 0.73rem;
+    }
+
+    .project-link {
+      color: #58a6ff;
+      text-decoration: none;
+      font-size: 0.86rem;
+      font-weight: 650;
+    }
+
+    .project-link:hover {
+      text-decoration: underline;
+    }
+
+    /* LEARNING */
+
+    .learning-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .learning-item {
+      padding: 17px;
+      background: #0f141a;
+      border: 1px solid #20262e;
+      border-radius: 10px;
+      color: #c9d1d9;
+      font-size: 0.88rem;
+    }
+
+    .learning-item small {
+      display: block;
+      color: #58a6ff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      margin-bottom: 3px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      margin-top: 80px;
+      padding-top: 24px;
+      border-top: 1px solid #21262d;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    footer p {
+      color: #6e7681;
+      font-size: 0.8rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    footer a {
+      color: #8b949e;
+      text-decoration: none;
+      font-size: 0.82rem;
+      transition: 0.2s ease;
+    }
+
+    footer a:hover {
+      color: #58a6ff;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 600px) {
+
+      .container {
+        padding: 45px 20px 30px;
+      }
+
+      header h1 {
+        font-size: 3rem;
+      }
+
+      header p {
+        font-size: 0.98rem;
+      }
+
+      section {
+        margin-top: 58px;
+      }
+
+      .education {
+        flex-direction: column;
+        gap: 5px;
+      }
+
+      .learning-grid {
+        grid-template-columns: 1fr;
+      }
+
+      footer {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
 
 </head>
 
 <body>
 
-<div class="container">
+  <div class="container">
 
+```
 <!-- HERO -->
 
 <header>
 
-  <div class="intro-label">
+  <div class="eyebrow">
     Mathematics & Statistics
   </div>
 
-  <h1>Hi, I'm Anjanan.</h1>
+  <h1>
+    Hi, I'm Anjanan.
+  </h1>
 
   <p>
     I'm a Mathematics & Statistics student at McMaster University
-    interested in data analytics, financial services, and turning
-    data into useful insights.
+    interested in data analytics, financial services, and using
+    data to solve real-world problems.
   </p>
 
-  <div class="hero-buttons">
+  <div class="buttons">
 
     <a
-      class="button button-primary"
+      class="button primary"
       href="resume.pdf"
       target="_blank">
       View Resume
     </a>
 
     <a
-      class="button button-secondary"
+      class="button secondary"
       href="https://github.com/anjanansenthan"
       target="_blank">
       GitHub
+    </a>
+
+    <a
+      class="button secondary"
+      href="https://www.linkedin.com/in/anjanan-senthan/"
+      target="_blank">
+      LinkedIn
     </a>
 
   </div>
@@ -62,9 +427,12 @@
 
 <section>
 
-  <h2>About</h2>
+  <div class="section-title">
+    <h2>About</h2>
+    <div class="section-line"></div>
+  </div>
 
-  <div class="card">
+  <div class="card about-text">
 
     <p>
       I am a Mathematics & Statistics student at McMaster University
@@ -73,11 +441,11 @@
     </p>
 
     <p>
-      I enjoy working with data to understand patterns, answer
-      questions, and communicate insights clearly. I'm particularly
-      interested in data analytics and financial services, and I use
-      personal projects to build practical experience with real-world
-      datasets.
+      I enjoy working with data to identify patterns, answer
+      questions, and communicate insights clearly. I am particularly
+      interested in data analytics and financial services, and I
+      build personal projects to develop practical experience with
+      real-world datasets.
     </p>
 
   </div>
@@ -89,30 +457,31 @@
 
 <section>
 
-  <h2>Education</h2>
+  <div class="section-title">
+    <h2>Education</h2>
+    <div class="section-line"></div>
+  </div>
 
-  <div class="card">
+  <div class="card education">
 
-    <div class="education-header">
+    <div>
 
-      <div>
+      <p class="university">
+        McMaster University
+      </p>
 
-        <h3>McMaster University</h3>
+      <p class="degree">
+        Mathematics & Statistics
+      </p>
 
-        <p class="degree">
-          Mathematics & Statistics
-        </p>
+      <p class="location">
+        Hamilton, Ontario
+      </p>
 
-        <p>
-          Hamilton, Ontario
-        </p>
+    </div>
 
-      </div>
-
-      <div class="education-date">
-        Undergraduate
-      </div>
-
+    <div class="status">
+      Undergraduate
     </div>
 
   </div>
@@ -124,12 +493,14 @@
 
 <section>
 
-  <h2>Projects</h2>
+  <div class="section-title">
+    <h2>Projects</h2>
+    <div class="section-line"></div>
+  </div>
 
+  <div class="card project">
 
-  <div class="card">
-
-    <div class="project-number">
+    <div class="project-label">
       PROJECT 01
     </div>
 
@@ -144,13 +515,11 @@
       understand historical market performance.
     </p>
 
-    <div class="project-tech">
-
+    <div class="tech">
       <span>R</span>
       <span>tidyquant</span>
       <span>ggplot2</span>
       <span>Financial Data</span>
-
     </div>
 
     <a
@@ -162,43 +531,6 @@
 
   </div>
 
-
-  <!-- Add your next project here -->
-
-  <div class="card">
-
-    <div class="project-number">
-      PROJECT 02
-    </div>
-
-    <h3>
-      NBA Analytics Dashboard
-    </h3>
-
-    <p>
-      An upcoming analytics project exploring NBA player and team
-      performance using statistical analysis, data visualization,
-      and an interactive dashboard.
-    </p>
-
-    <div class="project-tech">
-
-      <span>Python</span>
-      <span>SQL</span>
-      <span>Power BI</span>
-      <span>Data Analysis</span>
-
-    </div>
-
-    <a
-      class="project-link"
-      href="https://github.com/anjanansenthan"
-      target="_blank">
-      View GitHub →
-    </a>
-
-  </div>
-
 </section>
 
 
@@ -206,58 +538,32 @@
 
 <section>
 
-  <h2>Currently Learning</h2>
+  <div class="section-title">
+    <h2>Currently Learning</h2>
+    <div class="section-line"></div>
+  </div>
 
-  <div class="learning-list">
+  <div class="learning-grid">
 
     <div class="learning-item">
-      <span>01</span>
+      <small>01</small>
       SQL & Database Analysis
     </div>
 
     <div class="learning-item">
-      <span>02</span>
+      <small>02</small>
       Power BI & Data Visualization
     </div>
 
     <div class="learning-item">
-      <span>03</span>
+      <small>03</small>
       Python for Data Analysis
     </div>
 
     <div class="learning-item">
-      <span>04</span>
+      <small>04</small>
       Statistical Modeling
     </div>
-
-  </div>
-
-</section>
-
-
-<!-- RESUME -->
-
-<section>
-
-  <h2>Resume</h2>
-
-  <div class="card">
-
-    <h3>
-      Anjanan Senthan — Resume
-    </h3>
-
-    <p>
-      View my resume for additional information about my education,
-      experience, technical skills, and projects.
-    </p>
-
-    <a
-      class="project-link"
-      href="resume.pdf"
-      target="_blank">
-      View Resume →
-    </a>
 
   </div>
 
@@ -281,6 +587,12 @@
     </a>
 
     <a
+      href="https://www.linkedin.com/in/anjanan-senthan/"
+      target="_blank">
+      LinkedIn
+    </a>
+
+    <a
       href="mailto:anjanan.senthan@gmail.com">
       Email
     </a>
@@ -288,7 +600,9 @@
   </div>
 
 </footer>
+```
 
-</div>
+  </div>
 
-</body> </html>
+</body>
+</html>
