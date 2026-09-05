@@ -1,377 +1,819 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Anjanan Senthan | Mathematics &amp; Statistics</title>
+
+<title>Anjanan Senthan | Mathematics & Statistics</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
-  :root {
-    --paper: #ECE6D8;
-    --panel: #F4EFE3;
-    --ink: #1F2A24;
-    --muted: #6B6353;
-    --rule: #C7BEA6;
-    --accent: #2E5E45;
-    --accent-soft: #3E7357;
-    --data: #9C4A38;
+
+:root {
+  --paper: #ECE6D8;
+  --panel: #F4EFE3;
+  --ink: #1F2A24;
+  --muted: #6B6353;
+  --rule: #C7BEA6;
+  --accent: #2E5E45;
+  --accent-soft: #3E7357;
+  --data: #9C4A38;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.65;
+}
+
+/* -----------------------------
+   MAIN PAGE
+----------------------------- */
+
+.page {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 55px 35px 70px;
+}
+
+/* -----------------------------
+   HEADER
+----------------------------- */
+
+header {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 60px;
+  align-items: end;
+  padding-bottom: 35px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.name {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 500;
+  letter-spacing: -3px;
+  line-height: .95;
+}
+
+.role {
+  margin-top: 22px;
+  max-width: 470px;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.header-right {
+  justify-self: end;
+  width: 100%;
+  max-width: 330px;
+}
+
+nav.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+nav.links a {
+  text-decoration: none;
+  color: var(--ink);
+  font-size: .88rem;
+  padding: 9px 15px 9px 0;
+  margin-right: 15px;
+}
+
+nav.links a:hover {
+  color: var(--accent);
+}
+
+.intro-label {
+  margin-bottom: 12px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: .68rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* -----------------------------
+   SKILLS TICKER
+----------------------------- */
+
+.ticker {
+  margin-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.ticker span {
+  border: 1px solid var(--rule);
+  padding: 4px 9px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: .68rem;
+  color: var(--muted);
+}
+
+.ticker span::before {
+  content: "•";
+  color: var(--accent);
+  margin-right: 5px;
+}
+
+/* -----------------------------
+   CONTENT GRID
+----------------------------- */
+
+main {
+  margin-top: 60px;
+}
+
+/* Generic section */
+
+section {
+  margin-bottom: 100px;
+}
+
+.section-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: .68rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+
+h2 {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 1.1;
+}
+
+/* -----------------------------
+   ABOUT
+----------------------------- */
+
+.about-section {
+  display: grid;
+  grid-template-columns: .75fr 1.25fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.about-title {
+  position: sticky;
+  top: 40px;
+}
+
+.about {
+  max-width: 650px;
+  font-size: 1.05rem;
+  color: #333c34;
+}
+
+.about p + p {
+  margin-top: 22px;
+}
+
+/* -----------------------------
+   EDUCATION
+----------------------------- */
+
+.education-section {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.education-card {
+  background: var(--panel);
+  border: 1px solid var(--rule);
+  padding: 35px;
+  position: relative;
+}
+
+.education-card::before {
+  content: "EDUCATION";
+  position: absolute;
+  top: -11px;
+  left: 20px;
+  background: var(--paper);
+  padding: 0 8px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: .65rem;
+  color: var(--muted);
+  letter-spacing: 1px;
+}
+
+.education-card h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+
+.degree {
+  color: var(--accent);
+  margin-top: 8px;
+}
+
+.education-meta {
+  margin-top: 25px;
+  padding-top: 15px;
+  border-top: 1px dotted var(--rule);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: .75rem;
+  color: var(--muted);
+}
+
+/* -----------------------------
+   PROJECTS
+----------------------------- */
+
+.projects-section {
+  position: relative;
+}
+
+.projects-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 35px;
+}
+
+.projects-header .number {
+  font-family: 'IBM Plex Mono', monospace;
+  color: var(--muted);
+  font-size: .75rem;
+}
+
+/* Project card */
+
+.project {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  min-height: 300px;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+
+.project-info {
+  padding: 35px 40px 35px 0;
+}
+
+.project h3 {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.project p {
+  color: #333c34;
+  max-width: 620px;
+  margin-bottom: 22px;
+}
+
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 25px;
+}
+
+.stack span {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: .68rem;
+  color: var(--muted);
+  border: 1px solid var(--rule);
+  padding: 4px 9px;
+}
+
+.project-link {
+  display: inline-block;
+  font-size: .88rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent-soft);
+}
+
+.project-link:hover {
+  color: var(--data);
+}
+
+/* Project visual */
+
+.project-visual {
+  background: var(--panel);
+  border-left: 1px solid var(--rule);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+}
+
+.spark {
+  width: 220px;
+}
+
+.spark path.line {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 350;
+  stroke-dashoffset: 350;
+  animation: draw 1.6s ease-out .2s forwards;
+}
+
+.spark circle {
+  fill: var(--data);
+  opacity: 0;
+  animation: appear .4s ease-out 1.7s forwards;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
   }
+}
 
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--paper);
-    color: var(--ink);
-    font-family: 'Inter', sans-serif;
-    line-height: 1.65;
+@keyframes appear {
+  to {
+    opacity: 1;
   }
+}
 
-  ::selection { background: var(--accent); color: var(--panel); }
-  a { color: inherit; }
+/* -----------------------------
+   LEARNING
+----------------------------- */
+
+.learning-section {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 70px;
+  align-items: start;
+}
+
+.learning-intro {
+  max-width: 320px;
+}
+
+.learning-intro p {
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+.learning-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.learning-row {
+  background: var(--panel);
+  border: 1px solid var(--rule);
+  padding: 20px;
+  min-height: 115px;
+}
+
+.learning-row:nth-child(2) {
+  transform: translateY(25px);
+}
+
+.learning-row:nth-child(3) {
+  transform: translateY(-10px);
+}
+
+.learning-row:nth-child(4) {
+  transform: translateY(15px);
+}
+
+.learning-row .skill {
+  font-family: 'Fraunces', serif;
+  font-size: 1.25rem;
+}
+
+.learning-row .note {
+  color: var(--muted);
+  font-size: .78rem;
+  margin-top: 7px;
+}
+
+/* -----------------------------
+   FOOTER
+----------------------------- */
+
+footer {
+  margin-top: 40px;
+  padding-top: 25px;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+footer p {
+  color: var(--muted);
+  font-size: .78rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 22px;
+  font-size: .8rem;
+}
+
+footer a {
+  text-decoration: none;
+  color: var(--muted);
+}
+
+footer a:hover {
+  color: var(--accent);
+}
+
+/* -----------------------------
+   MOBILE
+----------------------------- */
+
+@media (max-width: 800px) {
 
   .page {
-    max-width: 1080px;
-    margin: 0 auto;
-    padding: 72px 28px 60px;
-    display: grid;
-    grid-template-columns: 250px 1fr;
-    gap: 70px;
-    align-items: start;
+    padding: 40px 20px 50px;
   }
 
-  aside {
-    position: sticky;
-    top: 60px;
+  header {
+    grid-template-columns: 1fr;
+    gap: 35px;
   }
 
   .name {
-    font-family: 'Fraunces', serif;
-    font-weight: 500;
-    font-size: 2.3rem;
-    letter-spacing: -0.5px;
-    line-height: 1.08;
+    font-size: 3.4rem;
+    letter-spacing: -2px;
   }
 
-  .role {
-    margin-top: 14px;
-    color: var(--muted);
-    font-size: 0.94rem;
-  }
-
-  nav.links {
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-    font-size: 0.9rem;
-  }
-
-  nav.links a {
-    text-decoration: none;
-    color: var(--ink);
-    padding: 8px 0;
-    border-bottom: 1px solid var(--rule);
-  }
-
-  nav.links a:first-child { border-top: 1px solid var(--rule); }
-  nav.links a:hover { color: var(--accent); }
-  nav.links a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-
-  .ticker {
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.74rem;
-    color: var(--muted);
-  }
-
-  .ticker span::before {
-    content: "";
-    display: inline-block;
-    width: 5px;
-    height: 5px;
-    background: var(--accent-soft);
-    border-radius: 50%;
-    margin-right: 8px;
-    vertical-align: middle;
+  .header-right {
+    justify-self: start;
   }
 
   main {
-    background-image: linear-gradient(var(--rule) 1px, transparent 1px);
-    background-size: 100% 34px;
+    margin-top: 45px;
   }
 
-  section { margin-bottom: 58px; }
-  section:last-of-type { margin-bottom: 0; }
-
-  h2 {
-    font-family: 'Fraunces', serif;
-    font-weight: 500;
-    font-size: 1.3rem;
-    margin-bottom: 20px;
+  section {
+    margin-bottom: 70px;
   }
 
-  .about {
-    max-width: 560px;
-    color: #333c34;
+  .about-section,
+  .education-section,
+  .learning-section {
+    grid-template-columns: 1fr;
+    gap: 30px;
   }
 
-  .about p + p { margin-top: 14px; }
-
-  .ledger-row { display: flex; align-items: baseline; gap: 10px; }
-  .ledger-row .label { white-space: nowrap; }
-  .ledger-row .label .inst { font-weight: 600; }
-  .ledger-row .label .degree { color: var(--accent); font-size: 0.92rem; }
-  .ledger-row .leader { flex: 1; border-bottom: 1px dotted var(--rule); margin-bottom: 6px; }
-  .ledger-row .value {
-    white-space: nowrap;
-    color: var(--muted);
-    font-size: 0.85rem;
-    font-family: 'IBM Plex Mono', monospace;
+  .about-title {
+    position: static;
   }
 
   .project {
-    display: grid;
-    grid-template-columns: 1fr 150px;
-    gap: 24px;
-    align-items: start;
+    grid-template-columns: 1fr;
   }
 
-  .project h3 {
-    font-family: 'Fraunces', serif;
-    font-weight: 500;
-    font-size: 1.25rem;
-    margin-bottom: 10px;
+  .project-info {
+    padding: 30px 0;
   }
 
-  .project p { color: #333c34; max-width: 480px; margin-bottom: 16px; }
-
-  .stack { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
-  .stack span {
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.7rem;
-    color: var(--muted);
-    border: 1px solid var(--rule);
-    padding: 3px 8px;
-    border-radius: 3px;
+  .project-visual {
+    border-left: none;
+    border-top: 1px solid var(--rule);
+    min-height: 200px;
   }
 
-  .project-link {
-    display: inline-block;
-    font-size: 0.88rem;
-    font-weight: 600;
-    color: var(--accent);
-    text-decoration: none;
-    border-bottom: 1px solid var(--accent-soft);
+  .learning-list {
+    grid-template-columns: 1fr;
   }
 
-  .project-link:hover { color: var(--accent-soft); }
+  .learning-row:nth-child(2),
+  .learning-row:nth-child(3),
+  .learning-row:nth-child(4) {
+    transform: none;
+  }
 
-  .spark { align-self: center; justify-self: end; }
+  footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
 
   .spark path.line {
-    fill: none;
-    stroke: var(--accent);
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-dasharray: 240;
-    stroke-dashoffset: 240;
-    animation: draw 1.6s ease-out 0.2s forwards;
+    animation: none;
+    stroke-dashoffset: 0;
   }
 
   .spark circle {
-    fill: var(--data);
-    opacity: 0;
-    animation: appear 0.4s ease-out 1.7s forwards;
+    animation: none;
+    opacity: 1;
   }
 
-  @keyframes draw { to { stroke-dashoffset: 0; } }
-  @keyframes appear { to { opacity: 1; } }
+}
 
-  @media (prefers-reduced-motion: reduce) {
-    .spark path.line { animation: none; stroke-dashoffset: 0; }
-    .spark circle { animation: none; opacity: 1; }
-  }
-
-  .learning-list { display: flex; flex-direction: column; }
-  .learning-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--rule);
-    gap: 20px;
-  }
-  .learning-row:first-child { border-top: 1px solid var(--rule); }
-  .learning-row .skill { font-weight: 600; white-space: nowrap; }
-  .learning-row .note { color: var(--muted); font-size: 0.88rem; text-align: right; }
-
-  footer {
-    margin-top: 70px;
-    padding-top: 22px;
-    border-top: 1px solid var(--rule);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 14px;
-  }
-
-  footer p { color: var(--muted); font-size: 0.8rem; }
-  .footer-links { display: flex; gap: 18px; font-size: 0.82rem; }
-  footer a { text-decoration: none; color: var(--muted); }
-  footer a:hover { color: var(--accent); }
-
-  @media (max-width: 780px) {
-    .page {
-      grid-template-columns: 1fr;
-      padding: 50px 20px 40px;
-      gap: 40px;
-    }
-    aside { position: static; }
-    nav.links { flex-direction: row; flex-wrap: wrap; }
-    nav.links a {
-      border-bottom: none;
-      border-right: 1px solid var(--rule);
-      padding: 3px 14px 3px 0;
-      margin-right: 14px;
-    }
-    nav.links a:first-child { border-top: none; }
-    nav.links a:last-child { border-right: none; margin-right: 0; }
-    .ticker { flex-direction: row; flex-wrap: wrap; gap: 16px; }
-    main { background-image: none; }
-    .project { grid-template-columns: 1fr; }
-    .spark { display: none; }
-    .ledger-row { flex-wrap: wrap; }
-    .ledger-row .leader { display: none; }
-    footer { flex-direction: column; align-items: flex-start; }
-  }
 </style>
 </head>
+
 <body>
 
 <div class="page">
 
-  <aside>
-    <div class="name">Anjanan Senthan</div>
-    <p class="role">
-      Mathematics &amp; Statistics student at McMaster University,
-      building toward a career in data analytics and financial services.
-    </p>
+  <!-- HEADER -->
 
-    <nav class="links">
-      <a href="resume" target="_blank">Resume</a>
-      <a href="https://github.com/anjanansenthan" target="_blank">GitHub</a>
-      <a href="https://www.linkedin.com/in/anjanan-senthan/" target="_blank">LinkedIn</a>
-      <a href="mailto:anjanan.senthan@gmail.com">Email</a>
-    </nav>
+  <header>
 
-    <div class="ticker">
-      <span>R</span>
-      <span>Python</span>
-      <span>SQL</span>
-      <span>Power BI</span>
-      <span>Statistics</span>
-      <span>Data Visualization</span>
+    <div>
+      <div class="intro-label">Mathematics · Statistics · Data</div>
+
+      <div class="name">
+        Anjanan<br>Senthan
+      </div>
+
+      <p class="role">
+        Mathematics &amp; Statistics student at McMaster University,
+        building toward a career in data analytics and financial services.
+      </p>
     </div>
-  </aside>
+
+    <div class="header-right">
+
+      <div class="intro-label">Connect</div>
+
+      <nav class="links">
+        <a href="resume" target="_blank">Resume</a>
+        <a href="https://github.com/anjanansenthan" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/anjanan-senthan/" target="_blank">LinkedIn</a>
+        <a href="mailto:anjanan.senthan@gmail.com">Email</a>
+      </nav>
+
+      <div class="ticker">
+        <span>R</span>
+        <span>Python</span>
+        <span>SQL</span>
+        <span>Power BI</span>
+        <span>Statistics</span>
+        <span>Data Visualization</span>
+      </div>
+
+    </div>
+
+  </header>
+
 
   <main>
 
-    <section>
-      <h2>About</h2>
+    <!-- ABOUT -->
+
+    <section class="about-section">
+
+      <div class="about-title">
+        <div class="section-label">01 / Profile</div>
+        <h2>About me</h2>
+      </div>
+
       <div class="about">
+
         <p>
           I'm developing my skills in statistical analysis, programming,
           and data visualization through coursework and independent
           projects.
         </p>
+
         <p>
           I like working with data to find patterns, answer questions,
           and communicate what I find clearly. My focus right now is
           data analytics and financial services, and I build projects
           with real datasets to get practical experience.
         </p>
+
       </div>
+
     </section>
 
-    <section>
-      <h2>Education</h2>
-      <div class="ledger-row">
-        <div class="label">
-          <div class="inst">McMaster University</div>
-          <div class="degree">Mathematics &amp; Statistics, Hamilton, Ontario</div>
+
+    <!-- EDUCATION -->
+
+    <section class="education-section">
+
+      <div>
+        <div class="section-label">02 / Education</div>
+        <h2>Academic<br>background</h2>
+      </div>
+
+      <div class="education-card">
+
+        <h3>McMaster University</h3>
+
+        <div class="degree">
+          Mathematics &amp; Statistics
         </div>
-        <div class="leader"></div>
-        <div class="value">Undergraduate</div>
+
+        <div class="education-meta">
+          Hamilton, Ontario · Undergraduate
+        </div>
+
       </div>
+
     </section>
 
-    <section>
-      <h2>Projects</h2>
-      <div class="project">
+
+    <!-- PROJECTS -->
+
+    <section class="projects-section">
+
+      <div class="projects-header">
+
         <div>
+          <div class="section-label">03 / Selected work</div>
+          <h2>Projects</h2>
+        </div>
+
+        <div class="number">
+          01 PROJECT
+        </div>
+
+      </div>
+
+
+      <div class="project">
+
+        <div class="project-info">
+
           <h3>Stock Market Performance Analysis</h3>
+
           <p>
             An R-based analysis of major companies including AAPL, MSFT,
             NVDA, AMZN, TSLA, and JPM — exploring returns, moving
             averages, volatility, and correlations to understand
             historical market performance.
           </p>
+
           <div class="stack">
             <span>R</span>
             <span>tidyquant</span>
             <span>ggplot2</span>
-            <span>financial data</span>
+            <span>Financial Data</span>
           </div>
-          <a class="project-link" href="https://github.com/anjanansenthan/financial-stock-analysis" target="_blank">
-            View project on GitHub
+
+          <a
+            class="project-link"
+            href="https://github.com/anjanansenthan/financial-stock-analysis"
+            target="_blank">
+            View project on GitHub →
           </a>
+
         </div>
 
-        <svg class="spark" viewBox="0 0 150 70" width="150" height="70" aria-hidden="true">
-          <path class="line" d="M4,52 L24,44 L44,50 L64,28 L84,34 L104,14 L124,20 L146,6" />
-          <circle cx="146" cy="6" r="3.5" />
-        </svg>
+
+        <div class="project-visual">
+
+          <svg class="spark"
+               viewBox="0 0 220 100"
+               aria-hidden="true">
+
+            <path
+              class="line"
+              d="M5,75
+                 L30,63
+                 L55,70
+                 L80,42
+                 L105,52
+                 L130,25
+                 L155,34
+                 L180,16
+                 L215,5" />
+
+            <circle
+              cx="215"
+              cy="5"
+              r="4" />
+
+          </svg>
+
+        </div>
+
       </div>
+
     </section>
 
-    <section>
-      <h2>Currently learning</h2>
+
+    <!-- CURRENTLY LEARNING -->
+
+    <section class="learning-section">
+
+      <div class="learning-intro">
+
+        <div class="section-label">04 / Development</div>
+
+        <h2>
+          Currently<br>learning
+        </h2>
+
+        <p>
+          Expanding my technical toolkit through coursework,
+          independent study, and hands-on projects.
+        </p>
+
+      </div>
+
+
       <div class="learning-list">
+
         <div class="learning-row">
           <div class="skill">SQL</div>
-          <div class="note">Database and query analysis</div>
+          <div class="note">
+            Database and query analysis
+          </div>
         </div>
+
         <div class="learning-row">
           <div class="skill">Power BI</div>
-          <div class="note">Dashboards and data visualization</div>
+          <div class="note">
+            Dashboards and data visualization
+          </div>
         </div>
+
         <div class="learning-row">
           <div class="skill">Python</div>
-          <div class="note">Data analysis workflows</div>
+          <div class="note">
+            Data analysis workflows
+          </div>
         </div>
+
         <div class="learning-row">
-          <div class="skill">Statistical modeling</div>
-          <div class="note">Applied methods beyond coursework</div>
+          <div class="skill">Statistical Modeling</div>
+          <div class="note">
+            Applied methods beyond coursework
+          </div>
         </div>
+
       </div>
+
     </section>
 
+
+    <!-- FOOTER -->
+
     <footer>
-      <p>© 2026 Anjanan Senthan</p>
+
+      <p>
+        © 2026 Anjanan Senthan
+      </p>
+
       <div class="footer-links">
-        <a href="https://github.com/anjanansenthan" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/anjanan-senthan/" target="_blank">LinkedIn</a>
-        <a href="mailto:anjanan.senthan@gmail.com">Email</a>
+
+        <a
+          href="https://github.com/anjanansenthan"
+          target="_blank">
+          GitHub
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/anjanan-senthan/"
+          target="_blank">
+          LinkedIn
+        </a>
+
+        <a href="mailto:anjanan.senthan@gmail.com">
+          Email
+        </a>
+
       </div>
+
     </footer>
 
   </main>
@@ -380,3 +822,4 @@
 
 </body>
 </html>
+```
