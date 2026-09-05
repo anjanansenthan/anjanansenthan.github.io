@@ -1,227 +1,294 @@
 <!DOCTYPE html>
 
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anjanan Senthan</title>
+<html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<title>Anjanan Senthan | Math & Statistics</title>
 
-    body {
-      font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
-      background-color: #0d1117;
-      color: #c9d1d9;
-      line-height: 1.6;
-    }
-
-    .container {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 80px 24px;
-    }
-
-    header h1 {
-      font-size: 2.2rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-      color: #e6edf3;
-    }
-
-    header p {
-      color: #8b949e;
-      font-size: 1.05rem;
-      max-width: 520px;
-    }
-
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 20px;
-    }
-
-    .skills span {
-      background-color: #161b22;
-      border: 1px solid #21262d;
-      color: #c9d1d9;
-      padding: 4px 12px;
-      border-radius: 999px;
-      font-size: 0.85rem;
-    }
-
-    section {
-      margin-top: 56px;
-    }
-
-    section h2 {
-      font-size: 1.3rem;
-      margin-bottom: 20px;
-      border-bottom: 1px solid #21262d;
-      padding-bottom: 10px;
-      color: #e6edf3;
-    }
-
-    .project {
-      background-color: #161b22;
-      border: 1px solid #21262d;
-      border-radius: 10px;
-      padding: 20px 24px;
-      margin-bottom: 16px;
-      transition: border-color 0.2s ease;
-    }
-
-    .project:hover {
-      border-color: #30363d;
-    }
-
-    .project h3 {
-      font-size: 1.1rem;
-      margin-bottom: 8px;
-      color: #e6edf3;
-    }
-
-    .project p {
-      color: #8b949e;
-      font-size: 0.95rem;
-      margin-bottom: 12px;
-    }
-
-    .project a {
-      color: #58a6ff;
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 600;
-    }
-
-    .project a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      margin-top: 60px;
-      padding-top: 20px;
-      border-top: 1px solid #21262d;
-      color: #8b949e;
-      font-size: 0.9rem;
-    }
-
-    footer a {
-      color: #58a6ff;
-      text-decoration: none;
-      margin-right: 16px;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-  </style>
+<style> * { box-sizing: border-box; margin: 0; padding: 0; } html { scroll-behavior: smooth; } body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; background: #0b0f14; color: #d1d5db; line-height: 1.7; } /* Main container */ .container { max-width: 850px; margin: 0 auto; padding: 70px 25px 40px; } /* Hero */ header { padding: 30px 0 20px; } .intro-label { color: #58a6ff; font-size: 0.9rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; } header h1 { font-size: clamp(2.6rem, 7vw, 4.2rem); line-height: 1.1; font-weight: 750; color: #f0f6fc; margin-bottom: 18px; letter-spacing: -2px; } header p { color: #8b949e; font-size: 1.15rem; max-width: 650px; line-height: 1.7; } /* Buttons */ .hero-buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; } .button { display: inline-block; padding: 10px 18px; border-radius: 7px; text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: all 0.2s ease; } .button-primary { background: #238636; color: white; } .button-primary:hover { background: #2ea043; transform: translateY(-2px); } .button-secondary { background: #161b22; border: 1px solid #30363d; color: #c9d1d9; } .button-secondary:hover { border-color: #58a6ff; color: #58a6ff; transform: translateY(-2px); } /* Skills */ .skills { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 28px; } .skills span { background: #11161d; border: 1px solid #30363d; color: #c9d1d9; padding: 6px 13px; border-radius: 999px; font-size: 0.82rem; transition: all 0.2s ease; } .skills span:hover { border-color: #58a6ff; color: #58a6ff; } /* Sections */ section { margin-top: 75px; } section h2 { font-size: 1.35rem; color: #f0f6fc; margin-bottom: 22px; display: flex; align-items: center; gap: 12px; } section h2::after { content: ""; height: 1px; flex: 1; background: #21262d; } /* Cards */ .card { background: #11161d; border: 1px solid #21262d; border-radius: 12px; padding: 25px; margin-bottom: 16px; transition: all 0.25s ease; } .card:hover { border-color: #30363d; transform: translateY(-3px); } .card h3 { font-size: 1.15rem; color: #f0f6fc; margin-bottom: 7px; } .card p { color: #8b949e; font-size: 0.95rem; margin-bottom: 14px; } /* Education */ .education-header { display: flex; justify-content: space-between; gap: 20px; align-items: flex-start; } .education-date { color: #8b949e; font-size: 0.85rem; white-space: nowrap; } .degree { color: #58a6ff !important; margin-bottom: 2px !important; } /* Projects */ .project-number { color: #58a6ff; font-size: 0.8rem; font-weight: 600; margin-bottom: 5px; } .project-tech { display: flex; flex-wrap: wrap; gap: 7px; margin: 15px 0; } .project-tech span { background: #0b0f14; border: 1px solid #30363d; color: #8b949e; padding: 4px 9px; border-radius: 5px; font-size: 0.75rem; } .project-link { color: #58a6ff; text-decoration: none; font-size: 0.9rem; font-weight: 600; } .project-link:hover { text-decoration: underline; } /* Currently learning */ .learning-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; } .learning-item { background: #11161d; border: 1px solid #21262d; border-radius: 10px; padding: 17px; color: #c9d1d9; font-size: 0.9rem; } .learning-item span { display: block; color: #58a6ff; font-size: 0.78rem; margin-bottom: 3px; font-weight: 600; } /* Footer */ footer { margin-top: 85px; padding: 25px 0 10px; border-top: 1px solid #21262d; display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; } footer p { color: #6e7681; font-size: 0.85rem; } .footer-links { display: flex; gap: 18px; } footer a { color: #8b949e; text-decoration: none; font-size: 0.85rem; transition: color 0.2s ease; } footer a:hover { color: #58a6ff; } /* Mobile */ @media (max-width: 600px) { .container { padding: 45px 20px 30px; } header h1 { font-size: 2.7rem; } header p { font-size: 1rem; } section { margin-top: 55px; } .card { padding: 20px; } .education-header { flex-direction: column; gap: 2px; } .learning-list { grid-template-columns: 1fr; } footer { flex-direction: column; align-items: flex-start; } } </style>
 
 </head>
 
 <body>
 
-  <div class="container">
+<div class="container">
 
-```
+<!-- HERO -->
+
 <header>
-  <h1>Hi, I'm Anjanan</h1>
+
+  <div class="intro-label">
+    Mathematics & Statistics
+  </div>
+
+  <h1>Hi, I'm Anjanan.</h1>
 
   <p>
-    Math & Statistics student building data skills for a career in data analysis.
+    I'm a Mathematics & Statistics student at McMaster University
+    interested in data analytics, financial services, and turning
+    data into useful insights.
   </p>
+
+  <div class="hero-buttons">
+
+    <a
+      class="button button-primary"
+      href="resume.pdf"
+      target="_blank">
+      View Resume
+    </a>
+
+    <a
+      class="button button-secondary"
+      href="https://github.com/anjanansenthan"
+      target="_blank">
+      GitHub
+    </a>
+
+  </div>
 
   <div class="skills">
     <span>R</span>
     <span>Python</span>
     <span>SQL</span>
     <span>Power BI</span>
+    <span>Statistics</span>
+    <span>Data Visualization</span>
   </div>
+
 </header>
 
 
+<!-- ABOUT -->
+
 <section>
+
   <h2>About</h2>
 
-  <div class="project">
+  <div class="card">
+
     <p>
       I am a Mathematics & Statistics student at McMaster University
-      interested in data analytics, financial services, and using data
-      to solve real-world problems. I am developing my skills in
-      statistical analysis, programming, and data visualization through
-      coursework and personal projects.
+      developing my skills in statistical analysis, programming,
+      and data visualization.
     </p>
+
+    <p>
+      I enjoy working with data to understand patterns, answer
+      questions, and communicate insights clearly. I'm particularly
+      interested in data analytics and financial services, and I use
+      personal projects to build practical experience with real-world
+      datasets.
+    </p>
+
   </div>
+
 </section>
 
 
+<!-- EDUCATION -->
+
 <section>
+
   <h2>Education</h2>
 
-  <div class="project">
-    <h3>McMaster University</h3>
+  <div class="card">
 
-    <p>
-      Mathematics & Statistics<br>
-      Hamilton, Ontario
-    </p>
+    <div class="education-header">
+
+      <div>
+
+        <h3>McMaster University</h3>
+
+        <p class="degree">
+          Mathematics & Statistics
+        </p>
+
+        <p>
+          Hamilton, Ontario
+        </p>
+
+      </div>
+
+      <div class="education-date">
+        Undergraduate
+      </div>
+
+    </div>
+
   </div>
+
 </section>
 
 
+<!-- PROJECTS -->
+
 <section>
+
   <h2>Projects</h2>
 
-  <div class="project">
-    <h3>Stock Market Performance Analysis</h3>
+
+  <div class="card">
+
+    <div class="project-number">
+      PROJECT 01
+    </div>
+
+    <h3>
+      Stock Market Performance Analysis
+    </h3>
 
     <p>
-      An R-based analysis of major stocks (AAPL, MSFT, NVDA, AMZN, TSLA, JPM)
-      covering returns, moving averages, volatility, and correlation.
+      An R-based analysis of major companies including AAPL, MSFT,
+      NVDA, AMZN, TSLA, and JPM. The project explores stock returns,
+      moving averages, volatility, and correlations to better
+      understand historical market performance.
     </p>
 
-    <a href="https://github.com/anjanansenthan/financial-stock-analysis" target="_blank">
-      View on GitHub →
+    <div class="project-tech">
+
+      <span>R</span>
+      <span>tidyquant</span>
+      <span>ggplot2</span>
+      <span>Financial Data</span>
+
+    </div>
+
+    <a
+      class="project-link"
+      href="https://github.com/anjanansenthan/financial-stock-analysis"
+      target="_blank">
+      View Project on GitHub →
     </a>
+
   </div>
+
+
+  <!-- Add your next project here -->
+
+  <div class="card">
+
+    <div class="project-number">
+      PROJECT 02
+    </div>
+
+    <h3>
+      NBA Analytics Dashboard
+    </h3>
+
+    <p>
+      An upcoming analytics project exploring NBA player and team
+      performance using statistical analysis, data visualization,
+      and an interactive dashboard.
+    </p>
+
+    <div class="project-tech">
+
+      <span>Python</span>
+      <span>SQL</span>
+      <span>Power BI</span>
+      <span>Data Analysis</span>
+
+    </div>
+
+    <a
+      class="project-link"
+      href="https://github.com/anjanansenthan"
+      target="_blank">
+      View GitHub →
+    </a>
+
+  </div>
+
 </section>
 
 
+<!-- CURRENTLY LEARNING -->
+
 <section>
+
+  <h2>Currently Learning</h2>
+
+  <div class="learning-list">
+
+    <div class="learning-item">
+      <span>01</span>
+      SQL & Database Analysis
+    </div>
+
+    <div class="learning-item">
+      <span>02</span>
+      Power BI & Data Visualization
+    </div>
+
+    <div class="learning-item">
+      <span>03</span>
+      Python for Data Analysis
+    </div>
+
+    <div class="learning-item">
+      <span>04</span>
+      Statistical Modeling
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- RESUME -->
+
+<section>
+
   <h2>Resume</h2>
 
-  <div class="project">
-    <h3>Anjanan Senthan - Resume</h3>
+  <div class="card">
+
+    <h3>
+      Anjanan Senthan — Resume
+    </h3>
 
     <p>
       View my resume for additional information about my education,
-      experience, skills, and projects.
+      experience, technical skills, and projects.
     </p>
 
-    <a href="resume.pdf" target="_blank">
+    <a
+      class="project-link"
+      href="resume.pdf"
+      target="_blank">
       View Resume →
     </a>
+
   </div>
+
 </section>
 
 
-<footer>
-  <a href="https://github.com/anjanansenthan" target="_blank">
-    GitHub
-  </a>
+<!-- FOOTER -->
 
-  <a href="mailto:anjanan.senthan@gmail.com">
-    Email
-  </a>
-</footer>
-```
+<footer>
+
+  <p>
+    © 2026 Anjanan Senthan
+  </p>
+
+  <div class="footer-links">
+
+    <a
+      href="https://github.com/anjanansenthan"
+      target="_blank">
+      GitHub
+    </a>
+
+    <a
+      href="mailto:anjanan.senthan@gmail.com">
+      Email
+    </a>
 
   </div>
 
-</body>
-</html>
+</footer>
+
+</div>
+
+</body> </html>
